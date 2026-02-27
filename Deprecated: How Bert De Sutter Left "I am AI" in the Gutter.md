@@ -1,5 +1,7 @@
 # The Lakenhallen Invitational: Silicon vs. Steel in Old Leuven
 
+![Live Coverage](live_coverage.png)
+
 AI engineering is often seen as a pursuit of the future, but at this year’s Leuven Neural Open, the industry's brightest minds gathered under the hallowed, vaulted ceilings of the Lakenhallen. Transforming the historic 14th-century Cloth Hall into a high-precision bowling corridor, the event sought to answer one question: Can a deterministic algorithm outperform raw, organic brilliance? While Leuven is famous for its university and its Stella Artois, for one night, it was the epicenter of the most advanced bowling physics on the planet.
 
 *(Update: February 27, 2026)*
