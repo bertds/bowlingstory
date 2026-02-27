@@ -238,7 +238,7 @@
         async function fetchStory() {
             try {
                 // Fetch the markdown file
-                const response = await fetch('Deprecated: How Bert De Sutter Left "I am AI" in the Gutter.md');
+                const response = await fetch('story.md');
                 if (!response.ok) throw new Error('Failed to load story');
 
                 const markdown = await response.text();
