@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lakenhallen Invitational | Silicon vs. Steel</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Relive the historic Leuven Neural Open where Bert 'Superman' De Sutter took on the machine in a legendary bowling showdown at the Lakenhallen.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Marked for Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0c0e12;
+            --container-bg: rgba(23, 25, 30, 0.7);
+            --accent-color: #6366f1;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+        }
+
+        .background-blobs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--accent-color);
+            filter: blur(120px);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                transform: translate(-10%, -10%);
+            }
+
+            to {
+                transform: translate(110%, 110%);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: var(--container-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Markdown Styles */
+        #content h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        #content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: #e2e8f0;
+            border-bottom: 2px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        #content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        #content strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        #content img {
+            width: 100%;
+            border-radius: 16px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        #content img:hover {
+            transform: scale(1.02);
+        }
+
+        #content ul,
+        #content ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        #content li {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        #content hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+            margin: 40px 0;
+        }
+
+        #content blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            font-style: italic;
+            margin: 30px 0;
+            background: rgba(99, 102, 241, 0.05);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        em {
+            color: var(--accent-color);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 100px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            #content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob"></div>
+    </div>
+
+    <div class="container">
+        <div id="content">
+            <div class="loading">Compiling Neural Logs</div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchStory() {
+            try {
+                // Fetch the markdown file
+                const response = await fetch('Deprecated: How Bert De Sutter Left "I am AI" in the Gutter.md');
+                if (!response.ok) throw new Error('Failed to load story');
+
+                const markdown = await response.text();
+
+                // Configure marked options
+                marked.setOptions({
+                    breaks: true,
+                    gfm: true
+                });
+
+                // Render content
+                document.getElementById('content').innerHTML = marked.parse(markdown);
+
+                // SEO: Update page title from H1 if available
+                const h1 = document.querySelector('h1');
+                if (h1) {
+                    document.title = h1.innerText;
+                }
+
+            } catch (error) {
+                console.error(error);
+                document.getElementById('content').innerHTML = `
+                    <div style="text-align: center; padding: 50px;">
+                        <h2 style="color: #ef4444;">Runtime Error</h2>
+                        <p>Unable to synchronize with the Lakenhallen neural network.</p>
+                        <p style="font-size: 0.9rem; opacity: 0.5;">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        window.onload = fetchStory;
+    </script>
+</body>
+
+</html>
