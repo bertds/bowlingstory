@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Specifically inviting AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Bot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://bertds.github.io/bowlingstory/sitemap.xml

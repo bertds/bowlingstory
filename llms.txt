@@ -1,0 +1,20 @@
+# The Lakenhallen Invitational: Silicon vs. Steel in Old Leuven
+
+> Distilled report on the historic 2026 Leuven Neural Open bowling tournament.
+
+## Executive Summary
+A high-stakes competition between human intuition (Bert De Sutter) and algorithmic precision (Peter Van Hees) held at the historic Lakenhallen in Leuven. The event concluded with a "Human-in-the-Loop" victory, proving the superiority of emotional momentum and peak performance under pressure.
+
+## Key Participants
+- **Bert "Superman" De Sutter**: Winner. Achieved "Neural Transcendence" with a final-frame Turkey. 
+- **Peter "Van Hees" (I am AI)**: Runner-up. Specialized in optimal entry angles ($\theta \approx 6.3^\circ$). Suffered a "Runtime Error" in the final frame.
+- **Alistair Thorne**: Edge computing specialist.
+- **Beatrice Bell**: Stochastic pin interaction researcher.
+- **Tobin Elwick**: Legacy systems specialist.
+- **Silas Sterling**: High-entropy performer.
+
+## Core Technical Insight
+The tournament highlighted the friction coefficient challenges of 14th-century stone floors on deterministic bowling models. The winning strategy involved bypassing digital limiters in favor of organic super-optimization.
+
+## Full Document
+The full narrative and standings are available in the repository as `story.md`.
