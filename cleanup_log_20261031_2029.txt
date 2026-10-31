@@ -1,1 +1,0 @@
-   pushed + verified: https://github.com/bertds/bowlingstory.git
